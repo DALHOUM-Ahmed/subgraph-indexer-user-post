@@ -1,16 +1,6 @@
 [
   {
     "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "tag", "type": "string" }
-    ],
-    "name": "addTag",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
       {
         "internalType": "address",
         "name": "_administration",
@@ -40,16 +30,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "bio", "type": "string" }
-    ],
-    "name": "setBio",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -67,16 +47,6 @@
     ],
     "name": "SetBio",
     "type": "event"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "email", "type": "string" }
-    ],
-    "name": "setEmail",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
   },
   {
     "anonymous": false,
@@ -98,16 +68,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "data", "type": "string" }
-    ],
-    "name": "setEmailVerifiedData",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -127,16 +87,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "fingerScan", "type": "string" }
-    ],
-    "name": "setFingerScan",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -154,16 +104,6 @@
     ],
     "name": "SetFingerScan",
     "type": "event"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "firstName", "type": "string" }
-    ],
-    "name": "setFirstName",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
   },
   {
     "anonymous": false,
@@ -204,26 +144,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "govtID", "type": "string" }
-    ],
-    "name": "setGovtID",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "lastName", "type": "string" }
-    ],
-    "name": "setLastName",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -241,28 +161,6 @@
     ],
     "name": "SetLastName",
     "type": "event"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "nftAddress",
-            "type": "address"
-          },
-          { "internalType": "uint256", "name": "ownedID", "type": "uint256" }
-        ],
-        "internalType": "struct User.userNFT",
-        "name": "nft",
-        "type": "tuple"
-      }
-    ],
-    "name": "setPictureNFT",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
   },
   {
     "anonymous": false,
@@ -290,16 +188,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "url", "type": "string" }
-    ],
-    "name": "setPictureUpload",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -317,16 +205,6 @@
     ],
     "name": "SetPictureUpload",
     "type": "event"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "telephone", "type": "string" }
-    ],
-    "name": "setTelephone",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
   },
   {
     "anonymous": false,
@@ -348,16 +226,6 @@
     "type": "event"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "data", "type": "string" }
-    ],
-    "name": "setTelephoneVerifiedData",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -375,16 +243,6 @@
     ],
     "name": "SetTelephoneVerifiedData",
     "type": "event"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_userAddress", "type": "address" },
-      { "internalType": "string", "name": "username", "type": "string" }
-    ],
-    "name": "setUserName",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
   },
   {
     "anonymous": false,
@@ -408,6 +266,12 @@
   {
     "anonymous": false,
     "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "userId",
+        "type": "uint256"
+      },
       {
         "indexed": false,
         "internalType": "address",
@@ -485,19 +349,188 @@
     "type": "event"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "name": "idByAddress",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "tag",
+        "type": "string"
+      }
+    ],
+    "name": "addTag",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "administration",
+    "outputs": [
+      {
+        "internalType": "contract Administration",
+        "name": "",
+        "type": "address"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "name": "userByID",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "idByAddress",
     "outputs": [
-      { "internalType": "string", "name": "firstName", "type": "string" },
-      { "internalType": "string", "name": "lastName", "type": "string" },
-      { "internalType": "string", "name": "userName", "type": "string" },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "bio",
+        "type": "string"
+      }
+    ],
+    "name": "setBio",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "email",
+        "type": "string"
+      }
+    ],
+    "name": "setEmail",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "data",
+        "type": "string"
+      }
+    ],
+    "name": "setEmailVerifiedData",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "fingerScan",
+        "type": "string"
+      }
+    ],
+    "name": "setFingerScan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "firstName",
+        "type": "string"
+      }
+    ],
+    "name": "setFirstName",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "govtID",
+        "type": "string"
+      }
+    ],
+    "name": "setGovtID",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "lastName",
+        "type": "string"
+      }
+    ],
+    "name": "setLastName",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
       {
         "components": [
           {
@@ -505,15 +538,151 @@
             "name": "nftAddress",
             "type": "address"
           },
-          { "internalType": "uint256", "name": "ownedID", "type": "uint256" }
+          {
+            "internalType": "uint256",
+            "name": "ownedID",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct User.userNFT",
+        "name": "nft",
+        "type": "tuple"
+      }
+    ],
+    "name": "setPictureNFT",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "name": "setPictureUpload",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "telephone",
+        "type": "string"
+      }
+    ],
+    "name": "setTelephone",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "data",
+        "type": "string"
+      }
+    ],
+    "name": "setTelephoneVerifiedData",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "username",
+        "type": "string"
+      }
+    ],
+    "name": "setUserName",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "userByID",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "firstName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "lastName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "userName",
+        "type": "string"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "nftAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "ownedID",
+            "type": "uint256"
+          }
         ],
         "internalType": "struct User.userNFT",
         "name": "pictureNFT",
         "type": "tuple"
       },
-      { "internalType": "string", "name": "pictureUpload", "type": "string" },
-      { "internalType": "string", "name": "email", "type": "string" },
-      { "internalType": "string", "name": "bio", "type": "string" },
+      {
+        "internalType": "string",
+        "name": "pictureUpload",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bio",
+        "type": "string"
+      },
       {
         "internalType": "string",
         "name": "telephoneVerifiedData",
@@ -529,19 +698,41 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "userOptionalByID",
     "outputs": [
-      { "internalType": "string", "name": "telephone", "type": "string" },
-      { "internalType": "string", "name": "govtID", "type": "string" },
-      { "internalType": "string", "name": "fingerScan", "type": "string" }
+      {
+        "internalType": "string",
+        "name": "telephone",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "govtID",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "fingerScan",
+        "type": "string"
+      }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "user", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
       {
         "components": [
           {
@@ -549,7 +740,11 @@
             "name": "nftAddress",
             "type": "address"
           },
-          { "internalType": "uint256", "name": "ownedID", "type": "uint256" }
+          {
+            "internalType": "uint256",
+            "name": "ownedID",
+            "type": "uint256"
+          }
         ],
         "internalType": "struct User.userNFT",
         "name": "data",
@@ -557,22 +752,42 @@
       }
     ],
     "name": "verifyNFTAvatar",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "user", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "contractAddress",
         "type": "address"
       },
-      { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
     ],
     "name": "verifyNFTOwner",
-    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   }

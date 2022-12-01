@@ -313,52 +313,56 @@ export class Signup__Params {
     this._event = event;
   }
 
+  get userId(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+
   get _userAddress(): Address {
-    return this._event.parameters[0].value.toAddress();
+    return this._event.parameters[1].value.toAddress();
   }
 
   get firstName(): string {
-    return this._event.parameters[1].value.toString();
-  }
-
-  get lastName(): string {
     return this._event.parameters[2].value.toString();
   }
 
-  get userName(): string {
+  get lastName(): string {
     return this._event.parameters[3].value.toString();
   }
 
-  get email(): string {
+  get userName(): string {
     return this._event.parameters[4].value.toString();
   }
 
-  get bio(): string {
+  get email(): string {
     return this._event.parameters[5].value.toString();
   }
 
-  get pictureUpload(): string {
+  get bio(): string {
     return this._event.parameters[6].value.toString();
   }
 
+  get pictureUpload(): string {
+    return this._event.parameters[7].value.toString();
+  }
+
   get nftAddress(): Address {
-    return this._event.parameters[7].value.toAddress();
+    return this._event.parameters[8].value.toAddress();
   }
 
   get ownedID(): BigInt {
-    return this._event.parameters[8].value.toBigInt();
+    return this._event.parameters[9].value.toBigInt();
   }
 
   get telephone(): string {
-    return this._event.parameters[9].value.toString();
-  }
-
-  get govtID(): string {
     return this._event.parameters[10].value.toString();
   }
 
-  get fingerScan(): string {
+  get govtID(): string {
     return this._event.parameters[11].value.toString();
+  }
+
+  get fingerScan(): string {
+    return this._event.parameters[12].value.toString();
   }
 }
 
@@ -501,6 +505,25 @@ export class User__verifyNFTAvatarInputDataStruct extends ethereum.Tuple {
 export class User extends ethereum.SmartContract {
   static bind(address: Address): User {
     return new User("User", address);
+  }
+
+  administration(): Address {
+    let result = super.call("administration", "administration():(address)", []);
+
+    return result[0].toAddress();
+  }
+
+  try_administration(): ethereum.CallResult<Address> {
+    let result = super.tryCall(
+      "administration",
+      "administration():(address)",
+      []
+    );
+    if (result.reverted) {
+      return new ethereum.CallResult();
+    }
+    let value = result.value;
+    return ethereum.CallResult.fromValue(value[0].toAddress());
   }
 
   idByAddress(param0: Address): BigInt {
@@ -673,6 +696,36 @@ export class User extends ethereum.SmartContract {
   }
 }
 
+export class ConstructorCall extends ethereum.Call {
+  get inputs(): ConstructorCall__Inputs {
+    return new ConstructorCall__Inputs(this);
+  }
+
+  get outputs(): ConstructorCall__Outputs {
+    return new ConstructorCall__Outputs(this);
+  }
+}
+
+export class ConstructorCall__Inputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call = call;
+  }
+
+  get _administration(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class ConstructorCall__Outputs {
+  _call: ConstructorCall;
+
+  constructor(call: ConstructorCall) {
+    this._call = call;
+  }
+}
+
 export class AddTagCall extends ethereum.Call {
   get inputs(): AddTagCall__Inputs {
     return new AddTagCall__Inputs(this);
@@ -703,36 +756,6 @@ export class AddTagCall__Outputs {
   _call: AddTagCall;
 
   constructor(call: AddTagCall) {
-    this._call = call;
-  }
-}
-
-export class ConstructorCall extends ethereum.Call {
-  get inputs(): ConstructorCall__Inputs {
-    return new ConstructorCall__Inputs(this);
-  }
-
-  get outputs(): ConstructorCall__Outputs {
-    return new ConstructorCall__Outputs(this);
-  }
-}
-
-export class ConstructorCall__Inputs {
-  _call: ConstructorCall;
-
-  constructor(call: ConstructorCall) {
-    this._call = call;
-  }
-
-  get _administration(): Address {
-    return this._call.inputValues[0].value.toAddress();
-  }
-}
-
-export class ConstructorCall__Outputs {
-  _call: ConstructorCall;
-
-  constructor(call: ConstructorCall) {
     this._call = call;
   }
 }

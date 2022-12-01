@@ -12,9 +12,9 @@ import {
 } from "@graphprotocol/graph-ts";
 
 export class Post extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -22,24 +22,24 @@ export class Post extends Entity {
     assert(id != null, "Cannot save Post entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type Post must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type Post must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("Post", id.toBytes().toHexString(), this);
+      store.set("Post", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): Post | null {
-    return changetype<Post | null>(store.get("Post", id.toHexString()));
+  static load(id: string): Post | null {
+    return changetype<Post | null>(store.get("Post", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
   }
 
   get title(): string {
@@ -114,20 +114,20 @@ export class Post extends Entity {
     this.set("transactionHash", Value.fromBytes(value));
   }
 
-  get author(): Bytes {
+  get author(): string {
     let value = this.get("author");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set author(value: Bytes) {
-    this.set("author", Value.fromBytes(value));
+  set author(value: string) {
+    this.set("author", Value.fromString(value));
   }
 }
 
 export class User extends Entity {
-  constructor(id: Bytes) {
+  constructor(id: string) {
     super();
-    this.set("id", Value.fromBytes(id));
+    this.set("id", Value.fromString(id));
   }
 
   save(): void {
@@ -135,24 +135,33 @@ export class User extends Entity {
     assert(id != null, "Cannot save User entity without an ID");
     if (id) {
       assert(
-        id.kind == ValueKind.BYTES,
-        `Entities of type User must have an ID of type Bytes but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        id.kind == ValueKind.STRING,
+        `Entities of type User must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("User", id.toBytes().toHexString(), this);
+      store.set("User", id.toString(), this);
     }
   }
 
-  static load(id: Bytes): User | null {
-    return changetype<User | null>(store.get("User", id.toHexString()));
+  static load(id: string): User | null {
+    return changetype<User | null>(store.get("User", id));
   }
 
-  get id(): Bytes {
+  get id(): string {
     let value = this.get("id");
-    return value!.toBytes();
+    return value!.toString();
   }
 
-  set id(value: Bytes) {
-    this.set("id", Value.fromBytes(value));
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get userId(): BigInt {
+    let value = this.get("userId");
+    return value!.toBigInt();
+  }
+
+  set userId(value: BigInt) {
+    this.set("userId", Value.fromBigInt(value));
   }
 
   get _userAddress(): Bytes {
@@ -348,20 +357,20 @@ export class User extends Entity {
     }
   }
 
-  get posts(): Array<Bytes> | null {
+  get posts(): Array<string> | null {
     let value = this.get("posts");
     if (!value || value.kind == ValueKind.NULL) {
       return null;
     } else {
-      return value.toBytesArray();
+      return value.toStringArray();
     }
   }
 
-  set posts(value: Array<Bytes> | null) {
+  set posts(value: Array<string> | null) {
     if (!value) {
       this.unset("posts");
     } else {
-      this.set("posts", Value.fromBytesArray(<Array<Bytes>>value));
+      this.set("posts", Value.fromStringArray(<Array<string>>value));
     }
   }
 }

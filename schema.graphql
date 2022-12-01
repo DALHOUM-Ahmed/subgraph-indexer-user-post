@@ -1,5 +1,5 @@
-type Post @entity(immutable: true) {
-  id: Bytes!
+type Post @entity {
+  id: ID!
   title: String! # string
   body: String! # string
   createdAt: BigInt! # uint256
@@ -11,8 +11,9 @@ type Post @entity(immutable: true) {
   author: User!
 }
 
-type User @entity(immutable: true) {
-  id: Bytes!
+type User @entity {
+  id: ID! # this field will contain a representation of the wallet address, cause the user will login with his wallet
+  userId: BigInt!
   _userAddress: Bytes! # address
   firstName: String! # string
   lastName: String! # string

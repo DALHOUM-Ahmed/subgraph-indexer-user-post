@@ -46,7 +46,7 @@ dataSources:
           handler: handleSetTelephoneVerifiedData
         - event: SetUsername(address,string)
           handler: handleSetUsername
-        - event: Signup(address,string,string,string,string,string,string,address,uint256,string,string,string)
+        - event: Signup(uint256,address,string,string,string,string,string,string,address,uint256,string,string,string)
           handler: handleSignup
       file: ./src/user.ts
   - kind: ethereum
