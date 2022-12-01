@@ -2,6 +2,9 @@
   "mumbai": {
     "User": {
       "address": "0x287c09dDAA242c6A3ff8a8E4CC0dCc2287403D99"
+    },
+    "Posts": {
+      "address": "0x21C25552D5ef6cA92974dC44b021B0ceA8e8E192"
     }
   }
 }

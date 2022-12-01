@@ -8,25 +8,14 @@ dataSources:
     source:
       address: "0x287c09dDAA242c6A3ff8a8E4CC0dCc2287403D99"
       abi: User
+      startBlock: 29428011
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - AddTag
-        - SetBio
-        - SetEmail
-        - SetEmailVerifiedData
-        - SetFingerScan
-        - SetFirstName
-        - SetGovID
-        - SetLastName
-        - SetPictureNFT
-        - SetPictureUpload
-        - SetTelephone
-        - SetTelephoneVerifiedData
-        - SetUsername
-        - Signup
+        - User
+        - Post
       abis:
         - name: User
           file: ./abis/User.json
@@ -60,3 +49,31 @@ dataSources:
         - event: Signup(address,string,string,string,string,string,string,address,uint256,string,string,string)
           handler: handleSignup
       file: ./src/user.ts
+  - kind: ethereum
+    name: Posts
+    network: mumbai
+    source:
+      address: "0x21C25552D5ef6cA92974dC44b021B0ceA8e8E192"
+      abi: Posts
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CreatePost
+        - DeletePost
+        - UpdateBody
+        - UpdatePost
+      abis:
+        - name: Posts
+          file: ./abis/Posts.json
+      eventHandlers:
+        - event: CreatePost(address,string,string,uint256,uint256,uint256)
+          handler: handleCreatePost
+        - event: DeletePost(address,uint256)
+          handler: handleDeletePost
+        - event: UpdateBody(address,uint256,string)
+          handler: handleUpdateBody
+        - event: UpdatePost(address,uint256,string)
+          handler: handleUpdatePost
+      file: ./src/posts.ts

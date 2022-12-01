@@ -1,0 +1,178 @@
+type CreatePost @entity(immutable: true) {
+  id: Bytes!
+  _author: Bytes! # address
+  title: String! # string
+  body: String! # string
+  createdAt: BigInt! # uint256
+  groupID: BigInt! # uint256
+  postID: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AddTag @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  tag: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetBio @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  bio: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetEmail @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  email: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetEmailVerifiedData @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  data: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetFingerScan @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  fingerScan: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetFirstName @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  firstName: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetGovID @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  govID: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetLastName @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  lastName: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetPictureNFT @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  nftAddress: Bytes! # address
+  id: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetPictureUpload @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  url: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetTelephone @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  telephone: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetTelephoneVerifiedData @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  data: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SetUsername @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  username: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Signup @entity(immutable: true) {
+  id: Bytes!
+  _userAddress: Bytes! # address
+  firstName: String! # string
+  lastName: String! # string
+  userName: String! # string
+  email: String! # string
+  bio: String! # string
+  pictureUpload: String! # string
+  nftAddress: Bytes! # address
+  ownedID: BigInt! # uint256
+  telephone: String! # string
+  govtID: String! # string
+  fingerScan: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DeletePost @entity(immutable: true) {
+  id: Bytes!
+  _executor: Bytes! # address
+  postID: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdateBody @entity(immutable: true) {
+  id: Bytes!
+  _executor: Bytes! # address
+  postID: BigInt! # uint256
+  body: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdatePost @entity(immutable: true) {
+  id: Bytes!
+  _executor: Bytes! # address
+  postID: BigInt! # uint256
+  title: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

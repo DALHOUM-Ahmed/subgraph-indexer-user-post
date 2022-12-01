@@ -15,20 +15,7 @@ import {
   Signup as SignupEvent
 } from "../generated/User/User"
 import {
-  AddTag,
-  SetBio,
-  SetEmail,
-  SetEmailVerifiedData,
-  SetFingerScan,
-  SetFirstName,
-  SetGovID,
-  SetLastName,
-  SetPictureNFT,
-  SetPictureUpload,
-  SetTelephone,
-  SetTelephoneVerifiedData,
-  SetUsername,
-  Signup
+  User
 } from "../generated/schema"
 
 export function handleAddTag(event: AddTagEvent): void {
@@ -219,8 +206,8 @@ export function handleSetUsername(event: SetUsernameEvent): void {
 }
 
 export function handleSignup(event: SignupEvent): void {
-  let entity = new Signup(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+  let entity = new User(
+    event.params._userAddress.toHex()
   )
   entity._userAddress = event.params._userAddress
   entity.firstName = event.params.firstName
