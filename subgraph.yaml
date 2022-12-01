@@ -1,0 +1,62 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: User
+    network: mumbai
+    source:
+      address: "0x287c09dDAA242c6A3ff8a8E4CC0dCc2287403D99"
+      abi: User
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AddTag
+        - SetBio
+        - SetEmail
+        - SetEmailVerifiedData
+        - SetFingerScan
+        - SetFirstName
+        - SetGovID
+        - SetLastName
+        - SetPictureNFT
+        - SetPictureUpload
+        - SetTelephone
+        - SetTelephoneVerifiedData
+        - SetUsername
+        - Signup
+      abis:
+        - name: User
+          file: ./abis/User.json
+      eventHandlers:
+        - event: AddTag(address,string)
+          handler: handleAddTag
+        - event: SetBio(address,string)
+          handler: handleSetBio
+        - event: SetEmail(address,string)
+          handler: handleSetEmail
+        - event: SetEmailVerifiedData(address,string)
+          handler: handleSetEmailVerifiedData
+        - event: SetFingerScan(address,string)
+          handler: handleSetFingerScan
+        - event: SetFirstName(address,string)
+          handler: handleSetFirstName
+        - event: SetGovID(address,string)
+          handler: handleSetGovID
+        - event: SetLastName(address,string)
+          handler: handleSetLastName
+        - event: SetPictureNFT(address,address,uint256)
+          handler: handleSetPictureNFT
+        - event: SetPictureUpload(address,string)
+          handler: handleSetPictureUpload
+        - event: SetTelephone(address,string)
+          handler: handleSetTelephone
+        - event: SetTelephoneVerifiedData(address,string)
+          handler: handleSetTelephoneVerifiedData
+        - event: SetUsername(address,string)
+          handler: handleSetUsername
+        - event: Signup(address,string,string,string,string,string,string,address,uint256,string,string,string)
+          handler: handleSignup
+      file: ./src/user.ts
