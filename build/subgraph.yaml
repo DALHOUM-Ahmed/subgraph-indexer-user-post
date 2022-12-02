@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: User
@@ -18,7 +18,7 @@ dataSources:
         - Post
       abis:
         - name: User
-          file: ./abis/User.json
+          file: User/abis/User.json
       eventHandlers:
         - event: AddTag(address,string)
           handler: handleAddTag
@@ -48,7 +48,7 @@ dataSources:
           handler: handleSetUsername
         - event: Signup(uint256,address,string,string,string,string,string,string,address,uint256,string,string,string)
           handler: handleSignup
-      file: ./src/user.ts
+      file: User/User.wasm
   - kind: ethereum
     name: Posts
     network: mumbai
@@ -66,7 +66,7 @@ dataSources:
         - UpdatePost
       abis:
         - name: Posts
-          file: ./abis/Posts.json
+          file: Posts/abis/Posts.json
       eventHandlers:
         - event: CreatePost(address,string,string,uint256,uint256,uint256)
           handler: handleCreatePost
@@ -76,4 +76,4 @@ dataSources:
           handler: handleUpdateBody
         - event: UpdatePost(address,uint256,string)
           handler: handleUpdatePost
-      file: ./src/posts.ts
+      file: Posts/Posts.wasm

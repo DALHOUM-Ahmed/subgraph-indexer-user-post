@@ -105,6 +105,23 @@ export class Post extends Entity {
     this.set("blockTimestamp", Value.fromBigInt(value));
   }
 
+  get editedAt(): BigInt | null {
+    let value = this.get("editedAt");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
+  }
+
+  set editedAt(value: BigInt | null) {
+    if (!value) {
+      this.unset("editedAt");
+    } else {
+      this.set("editedAt", Value.fromBigInt(<BigInt>value));
+    }
+  }
+
   get transactionHash(): Bytes {
     let value = this.get("transactionHash");
     return value!.toBytes();
@@ -121,6 +138,15 @@ export class Post extends Entity {
 
   set author(value: string) {
     this.set("author", Value.fromString(value));
+  }
+
+  get deleted(): boolean {
+    let value = this.get("deleted");
+    return value!.toBoolean();
+  }
+
+  set deleted(value: boolean) {
+    this.set("deleted", Value.fromBoolean(value));
   }
 }
 
@@ -357,20 +383,21 @@ export class User extends Entity {
     }
   }
 
-  get posts(): Array<string> | null {
+  get posts(): Array<string> {
     let value = this.get("posts");
-    if (!value || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toStringArray();
-    }
+    return value!.toStringArray();
   }
 
-  set posts(value: Array<string> | null) {
-    if (!value) {
-      this.unset("posts");
-    } else {
-      this.set("posts", Value.fromStringArray(<Array<string>>value));
-    }
+  set posts(value: Array<string>) {
+    this.set("posts", Value.fromStringArray(value));
+  }
+
+  get deleted(): boolean {
+    let value = this.get("deleted");
+    return value!.toBoolean();
+  }
+
+  set deleted(value: boolean) {
+    this.set("deleted", Value.fromBoolean(value));
   }
 }
