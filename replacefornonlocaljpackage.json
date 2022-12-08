@@ -1,0 +1,4 @@
+
+    // "create-local": "graph create --node http://localhost:8020/ dalhoum-ahmed/user-post",
+    // "remove-local": "graph remove --node http://localhost:8020/ dalhoum-ahmed/user-post",
+    // "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 dalhoum-ahmed/user-post",
